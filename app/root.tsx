@@ -23,6 +23,7 @@ import {
   getSeoMeta,
   type SeoConfig,
 } from '@shopify/hydrogen';
+import {CartProvider} from '@shopify/hydrogen-react';
 import invariant from 'tiny-invariant';
 
 import {PageLayout} from '~/components/PageLayout';
@@ -161,12 +162,14 @@ function Layout({children}: {children?: React.ReactNode}) {
             shop={data.shop}
             consent={data.consent}
           >
-            <PageLayout
-              key={`${locale.language}-${locale.country}`}
-              layout={data.layout}
-            >
-              {children}
-            </PageLayout>
+            <CartProvider>
+              <PageLayout
+                key={`${locale.language}-${locale.country}`}
+                layout={data.layout}
+              >
+                {children}
+              </PageLayout>
+            </CartProvider>
           </Analytics.Provider>
         ) : (
           children
