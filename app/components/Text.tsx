@@ -22,7 +22,7 @@ export function Text({
   [key: string]: any;
 }) {
   const colors: Record<string, string> = {
-    default: 'inherit',
+    default: 'text-black',
     primary: 'text-primary/90',
     subtle: 'text-primary/50',
     notice: 'text-notice',

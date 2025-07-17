@@ -32,14 +32,14 @@ export function ProductGrid({products, title}: ProductGridProps) {
             </div>
             <div className="mt-4 flex justify-between">
               <div>
-                <h3 className="text-sm font-medium text-gray-900">
+                <h3 className="text-sm font-medium text-black">
                   {product.title}
                 </h3>
-                <p className="mt-1 text-sm text-gray-500">
+                <p className="mt-1 text-sm text-black">
                   {product.productType}
                 </p>
               </div>
-              <p className="text-sm font-medium text-gray-900">
+              <p className="text-sm font-medium text-black">
                 {product.priceRange?.minVariantPrice?.amount
                   ? new Intl.NumberFormat('en-US', {
                       style: 'currency',
